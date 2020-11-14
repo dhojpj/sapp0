@@ -97,8 +97,8 @@ app.prepare().then(() => {
       data: mockDB
     }
     if(mockDB.length > 0) {
-      // console.log('body after', mockDB[mockDB.length - 1]);
-      console.log('body after', mockDB[0]);
+      console.log('body after', mockDB[mockDB.length - 1]);
+      // console.log('body after', mockDB[0]);
     }
   });
 
