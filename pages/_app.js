@@ -51,45 +51,45 @@ class MyApp extends App {
 
 
     // my modifications
-    // return (
-    //   <React.Fragment>
-    //     <Head>
-    //       <title>App Paige!</title>
-    //       <meta charSet="utf-8" />
-    //     </Head>
-
-    //     <AppProvider i18n={translations}>
-    //       <Provider config={config}>
-    //         <ApolloProvider client={client}>
-    //           <Component {...pageProps} />
-    //         </ApolloProvider>
-    //         <TitleBar title="Dashboard" />
-    //       </Provider>
-    //     </AppProvider>
-
-    //   </React.Fragment>
-    // );
-
-      // from the course
     return (
       <React.Fragment>
         <Head>
           <title>App Paige!</title>
           <meta charSet="utf-8" />
         </Head>
-        <Provider config={config}>
-          <AppProvider i18n={translations}>
+
+        <AppProvider i18n={translations}>
+          <Provider config={config}>
             <ApolloProvider client={client}>
               <Component {...pageProps} />
             </ApolloProvider>
-          </AppProvider>
+            <TitleBar title="Dashboard" />
+          </Provider>
+        </AppProvider>
 
-          <TitleBar
-            title="Dashboard"
-          />
-        </Provider>
       </React.Fragment>
-    );    
+    );
+
+      // from the course
+    // return (
+    //   <React.Fragment>
+    //     <Head>
+    //       <title>App Paige!</title>
+    //       <meta charSet="utf-8" />
+    //     </Head>
+    //     <Provider config={config}>
+    //       <AppProvider i18n={translations}>
+    //         <ApolloProvider client={client}>
+    //           <Component {...pageProps} />
+    //         </ApolloProvider>
+    //       </AppProvider>
+
+    //       <TitleBar
+    //         title="Dashboard"
+    //       />
+    //     </Provider>
+    //   </React.Fragment>
+    // );    
   }
 }
 
