@@ -46,52 +46,50 @@ class MyApp extends App {
     // appbridge Provider > polaris AppProvider????
     // App Bridge React is fully compatible with Polaris. To use them together, wrap your app in both Polaris’s <AppProvider> component and App Bridge React’s <Provider> component. 
     // Pass the config object containing the apiKey and shopOrigin values to the App Bridge React <Provider> config prop. Don't pass the apiKey or shopOrigin values to the Polaris <AppProvider> component.
+    // Provider > Titlebar
     // https://shopify.dev/tools/app-bridge/react-components/provider
 
 
-    return (
-      <React.Fragment>
-        <Head>
-          <title>App Paige!</title>
-          <meta charSet="utf-8" />
-        </Head>
-
-        <AppProvider i18n={translations}>
-          <Provider config={config}>
-            <ApolloProvider client={client}>
-              <Component {...pageProps} />
-            </ApolloProvider>
-            <TitleBar title="Dashboard" />
-          </Provider>
-        </AppProvider>
-
-      </React.Fragment>
-    );    
-
-
-    
-    // Provider > Titlebar
-
-
+    // my modifications
     // return (
     //   <React.Fragment>
     //     <Head>
     //       <title>App Paige!</title>
     //       <meta charSet="utf-8" />
     //     </Head>
-    //     <Provider config={config}>
-    //       <AppProvider i18n={translations}>
+
+    //     <AppProvider i18n={translations}>
+    //       <Provider config={config}>
     //         <ApolloProvider client={client}>
     //           <Component {...pageProps} />
     //         </ApolloProvider>
-    //       </AppProvider>
+    //         <TitleBar title="Dashboard" />
+    //       </Provider>
+    //     </AppProvider>
 
-    //       <TitleBar
-    //         title="Dashboard"
-    //       />
-    //     </Provider>
     //   </React.Fragment>
-    // );    
+    // );
+
+      // from the course
+    return (
+      <React.Fragment>
+        <Head>
+          <title>App Paige!</title>
+          <meta charSet="utf-8" />
+        </Head>
+        <Provider config={config}>
+          <AppProvider i18n={translations}>
+            <ApolloProvider client={client}>
+              <Component {...pageProps} />
+            </ApolloProvider>
+          </AppProvider>
+
+          <TitleBar
+            title="Dashboard"
+          />
+        </Provider>
+      </React.Fragment>
+    );    
   }
 }
 
